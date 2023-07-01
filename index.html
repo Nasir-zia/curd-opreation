@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+        <div class="input-group mb-3 mt-5">
+            <input type="text" class="form-control" placeholder="List-Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-primary" type="button" id="button">Add Elements</button>
+          </div>
+
+
+
+          <!-- lsit -->
+          <ul id="ul" class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+                <h3 class="flex-grow-1 ">Elements</h3>
+
+                <button class="btn btn-danger justify-content-end mx-3" onclick="remove(this)">Remove</button>
+                <button class="btn btn-success justify-content-end ">Edit</button>
+
+
+            </li>
+          </ul>
+          
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- script -->
+
+    <script>
+        // adding element
+        let Button = document.getElementById('button');
+          Button. addEventListener( 'click', click)
+        function click(event) {
+            let button = event.currentTarget;
+            let input = button.previousElementSibling
+            
+            let newli = document.createElement('li')
+            newli.classList.add('list-group-item')
+            newli.textContent = input.value;
+
+            let ul = document.getElementById('ul')
+            ul.appendChild(newli)
+        }
+
+
+        // adding new elements in new list
+
+
+        let Button2 = document.getElementById('button');
+          Button. addEventListener( 'click', click)
+        function click(event) {
+            let button = event.currentTarget;
+            let input = button.previousElementSibling
+            let item = input.value;
+            
+            let newli = document.createElement('li')
+            newli.classNames="list-group-item d-flex justify-content-between "
+             newli.innerHTML = `
+                <h3 class="flex-grow-1 ">${item}</h3>
+
+                <button class="btn btn-danger justify-content-end " onclick="remove(this)">Remove</button>
+                <button class="btn btn-success justify-content-end ">Edit</button>
+`
+            let ul = document.getElementById('ul')
+            ul.appendChild(newli)
+        }
+
+
+// remove 
+        function remove(currentElement) {
+        currentElement.parentElement.remove();
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+</html>
