@@ -75,11 +75,15 @@
             
             let newli = document.createElement('li')
             newli.classNames="list-group-item d-flex justify-content-between "
-             newli.innerHTML = `
+             newli.innerHTML = `    <li class="list-group-item d-flex justify-content-between">
                 <h3 class="flex-grow-1 ">${item}</h3>
 
-                <button class="btn btn-danger justify-content-end " onclick="remove(this)">Remove</button>
-                <button class="btn btn-success justify-content-end ">Edit</button>
+                <button class="btn btn-danger justify-content-end mx-3" onclick="remove(this)">Remove </button>
+                <button class="btn btn-success justify-content-end ">Edit </button>
+
+
+            </li>
+       
 `
             let ul = document.getElementById('ul')
             ul.appendChild(newli)
@@ -90,6 +94,8 @@
         function remove(currentElement) {
         currentElement.parentElement.remove();
         }
+
+        
 
     </script>
 
